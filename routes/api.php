@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\test2 as la;
+use App\Http\Controllers\Api\Product;
+use App\Http\Controllers\Api\Category;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +19,11 @@ use App\Http\Controllers\Api\test2 as la;
 //     return $request->user();
 // });
 
-Route::prefix('apiTest')->group(function (){
-    Route::apiResource('apiNem',la::class);
+Route::prefix('Product')->controller(Product::class)->name('Product.')->group(function (){
+    Route::get('show','ShowProduct')->name('show');
+    Route::get('search/{name}','NameProduct');
+});
+
+Route::prefix('Category')->name('Category.')->group(function (){
+    Route::post('add',[Category::class,'AddCategory'])->name('add');
 });

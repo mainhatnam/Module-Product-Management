@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\test2 as la;
-use App\Http\Controllers\Api\test1;
+use App\Http\Controllers\Api\Category;
 use App\Http\Controllers\Nem;
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +17,9 @@ use App\Http\Controllers\Nem;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('hello', function () {
+Route::get('test', function () {
     return view('hello');
 });
-Route::get('apiNem',[la::class, 'index']);
-Route::get('apiNem2',[test1::class, 'index']);
-Route::get('apiNem3',[Nem::class, 'index']);
+Route::prefix('Category')->name('Category.')->group(function (){
+    Route::post('add',[Category::class,'AddCategory'])->name('add');
+});
