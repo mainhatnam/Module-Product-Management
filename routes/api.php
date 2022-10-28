@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Product;
 use App\Http\Controllers\Api\Category;
+use App\Http\Controllers\Api\controllerUser;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +27,8 @@ Route::prefix('Product')->controller(Product::class)->name('Product.')->group(fu
 
 Route::prefix('Category')->name('Category.')->group(function (){
     Route::post('add',[Category::class,'AddCategory'])->name('add');
+});
+
+Route::prefix('user')->name('user.')->group(function (){
+    Route::get('show/{id}',[controllerUser::class,'ShowUser'])->name('show');
 });
