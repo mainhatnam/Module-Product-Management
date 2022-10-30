@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->float('price');
             $table->string('img');
+            $table->string('imgs');
             $table->rememberToken();
             $table->timestamps();
             $table->foreignId('category_id')->constrained('category');

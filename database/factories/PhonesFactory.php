@@ -21,6 +21,7 @@ class PhonesFactory extends Factory
             'name' => fake()->text(20),
             'price' => fake()->randomFloat(null,100,1000),
             'img' => fake()->text(20),
+            'imgs' => fake()->text(20),
             'remember_token' => Str::random(10),
             'category_id' => category::factory()
         ];

@@ -12,6 +12,7 @@ class Phones extends Model
         'name',
         'price',
         'img',
+        'imgs',
         'category_id'
     ];
     protected $hidden = [
