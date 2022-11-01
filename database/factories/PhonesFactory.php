@@ -17,12 +17,14 @@ class PhonesFactory extends Factory
      */
     public function definition()
     {
+        $name = fake()->text(20);
+        $slug = Str::slug($name);
         return [
-            'name' => fake()->text(20),
+            'name' => $name,
+            'slug' => $slug,
             'price' => fake()->randomFloat(null,100,1000),
             'img' => fake()->text(20),
             'imgs' => fake()->text(20),
-            'remember_token' => Str::random(10),
             'category_id' => category::factory()
         ];
     }

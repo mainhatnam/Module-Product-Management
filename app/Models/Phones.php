@@ -10,12 +10,17 @@ class Phones extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'slug',
         'price',
         'img',
         'imgs',
         'category_id'
     ];
-    protected $hidden = [
-        'remember_token'
-    ];
+
+    public function Category(){
+        return $this->belongsTo(category::class);
+    }
+    public function scopeTakeAndSort($query,$take){
+        return $query->take($take)->sortByDesc('id');
+     }
 }

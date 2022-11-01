@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();     
             $table->float('price');
-            $table->string('img');
-            $table->string('imgs');
-            $table->rememberToken();
+            $table->text('img');
+            $table->text('imgs');
             $table->timestamps();
             $table->foreignId('category_id')->constrained('category');
         });

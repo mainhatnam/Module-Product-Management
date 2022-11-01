@@ -11,6 +11,10 @@ class category extends Model
     protected $table = 'category';
     public $timestamps = false;
     protected $fillable = [
-        'name'
+        'name',
+        'slug'
     ];
+    public function phones(){
+        return $this->hasMany(Phones::class);
+    }
 }
