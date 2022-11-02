@@ -43,5 +43,20 @@ class PhoneController extends Controller
     {
         return $this->sentResponse(new PhoneResource(Phones::find($phones->id)));
     }
-
+     /**
+     * find name Phone
+     * @return Json
+     */
+    public function FindNamePhone(Request $request)
+    {
+        if ($request->has('key')) {
+            $keySearch = $request->query('key');
+            $PhoneResource = PhoneResource::collection(Phones::where('name','Like','%'.$keySearch.'%')
+            ->orderBy('id', 'desc')->paginate(1)->appends(['key' => $keySearch]))
+            ->additional(['keySearch' => ['key' => $keySearch ]])
+            ->response()->getData(true);
+            return $this->sentResponse($PhoneResource);
+        }
+        return abort(404);
+    }
 }

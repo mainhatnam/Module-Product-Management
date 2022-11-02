@@ -11,6 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    protected $appends = ['registered'];
+    protected function getRegisteredAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+    
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +27,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
+    ];
+
+   /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'is_admin' => false,
     ];
 
     /**
@@ -44,4 +60,5 @@ class User extends Authenticatable
     public function scopeGetEmailUser($query,$email){
        return $query->where('email',$email);
     }
+
 }

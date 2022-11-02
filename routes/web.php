@@ -20,10 +20,10 @@ Route::get('/', function () {
 Route::get('test', function () {
     return view('hello');
 });
-Route::prefix('Category')->name('Category.')->group(function (){
-    Route::post('add',[Category::class,'AddCategory'])->name('add');
-});
-Route::prefix('user')->name('user.')->group(function (){
-    Route::get('show/{id}',[controllerUser::class,'ShowUser'])->name('show');
-    Route::post('adduser',[controllerUser::class,'addUser'])->name('adduser');
-});
+// Route::prefix('Category')->name('Category.')->group(function (){
+//     Route::post('add',[Category::class,'AddCategory'])->name('add');
+// });
+// Route::prefix('user')->name('user.')->group(function (){
+//     Route::get('show/{id}',[controllerUser::class,'ShowUser'])->name('show');
+//     Route::post('adduser',[controllerUser::class,'addUser'])->name('adduser');
+// });

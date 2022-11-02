@@ -14,7 +14,8 @@ class controllerUser extends Controller
     //
     public function ShowUser(){
         $user = User::paginate(5);
-        return UserResource::collection($user);
+        return $user;
+        // UserResource::collection($user)
     }
     public function addUser(UserRequset $UserRequset){
         $UserRequset['password']=bcrypt($UserRequset['password']);
