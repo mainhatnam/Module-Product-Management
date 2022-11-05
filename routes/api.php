@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\controllerUser;
 use App\Http\Controllers\Api\Client\CategoryController as ClientCategory;
 use App\Http\Controllers\Api\Client\PhoneController as ClientPhone;
-use App\Http\Controllers\Api\Login\AuthController;
+use App\Http\Controllers\Api\Client\LoginController;
 use App\Http\Controllers\Api\User\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +27,6 @@ Route::prefix('user')->name('user.')->group(function (){
     Route::post('adduser',[controllerUser::class,'addUser'])->name('adduser');
 });
 
-Route::prefix('login')->name('login.')->group(function (){
-    Route::post('auth',[AuthController::class,'Login'])->name('auth');
-});
-Route::prefix('User')->name('User.')->middleware(['auth:sanctum'])->group(function (){
-        Route::get('index',[UserController::class,'index'])->name('index');
-});
 Route::prefix('Client')->name('Client.')->group(function (){
     Route::prefix('Category')->name('Category.')->group(function (){
         Route::get('Show',[ClientCategory::class,'ShowAllCategory'])->name('show');
@@ -44,5 +38,13 @@ Route::prefix('Client')->name('Client.')->group(function (){
         Route::get('Info/{phones:slug}',[ClientPhone::class,'PhoneById'])->name('info');
         Route::get('Search',[ClientPhone::class,'FindNamePhone'])->name('search');
     });
+});
+
+Route::prefix('login')->name('login.')->group(function (){
+    Route::post('authLogin',[LoginController::class,'Login'])->name('authLogin');
+});
+
+Route::prefix('User')->name('User.')->middleware(['auth:api'])->group(function (){
+        Route::get('index',[UserController::class,'index'])->name('index');
 });
 
