@@ -1,0 +1,1136 @@
+{
+	"info": {
+		"_postman_id": "a250e9b4-055f-46dd-9510-1ff01c13c3c1",
+		"name": "API Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18056870"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "show all category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Category/Show",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Category",
+										"Show"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Phone by category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Category/ShowByPhone",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Category",
+										"ShowByPhone"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Phone",
+					"item": [
+						{
+							"name": "Show all phone",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Phone/Show",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Phone",
+										"Show"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Phone by category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Phone/Category/officiis-amet",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Phone",
+										"Category",
+										"officiis-amet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "info phone",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Phone/Info/aperiam-et",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Phone",
+										"Info",
+										"aperiam-et"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Client/Phone/Search?key=",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Client",
+										"Phone",
+										"Search"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mainhatnam123@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/login/authLogin",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"login",
+										"authLogin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9BdXRoL3JlZnJlc2giLCJpYXQiOjE2Njc3NDkzMzcsImV4cCI6MTY2Nzc1MzY0NiwibmJmIjoxNjY3NzUwMDQ2LCJqdGkiOiJHS3JhV2JvYkVsellxN3lzIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OjMPcHg4m-s5pzfL1CyTU-GDHM1bDFh3GTHKpXucQzw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/public/api/Auth/logout",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"public",
+										"api",
+										"Auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc3NTQ3NDUsImV4cCI6MTY2Nzc1ODM0NSwibmJmIjoxNjY3NzU0NzQ1LCJqdGkiOiJUUXpiYWZxRWlJT0xIYjBwIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.aAcmSkHV6SvDAR5a7RvU8igv9LUpVPWLBqTDDKSLmpg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/api/Auth/me",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc3NDkzMzcsImV4cCI6MTY2Nzc1MjkzNywibmJmIjoxNjY3NzQ5MzM3LCJqdGkiOiJnVjBYV2RBSFNxZndMa3h1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AcBpYcAqMA6yvQ_6xHMj63eg-RC6n_oHJG6MlbCBl00",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/api/Auth/refresh",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Auth",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "mai nhat nam",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mainhatnam1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/login/authRegister",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"login",
+										"authRegister"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Server",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "show all user",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc4MzA2NjksImV4cCI6MTY2NzgzNDI2OSwibmJmIjoxNjY3ODMwNjY5LCJqdGkiOiI0czRPaG9BdW1VZERsZzlFIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qUmbZRMfRK4mvIuZ16_ntl0USH3BnQetmyMQaRNsLAM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/Webservice/WebApi/public/api/Admin/User/index",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Webservice",
+										"WebApi",
+										"public",
+										"api",
+										"Admin",
+										"User",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc3NTQ3NDUsImV4cCI6MTY2Nzc1ODM0NSwibmJmIjoxNjY3NzU0NzQ1LCJqdGkiOiJUUXpiYWZxRWlJT0xIYjBwIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.aAcmSkHV6SvDAR5a7RvU8igv9LUpVPWLBqTDDKSLmpg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "be nem kute 12",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "namkute1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "is_admin",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Webservice/WebApi/public/api/Admin/User/store",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Webservice",
+										"WebApi",
+										"public",
+										"api",
+										"Admin",
+										"User",
+										"store"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FindId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc3NTQ3NDUsImV4cCI6MTY2Nzc1ODM0NSwibmJmIjoxNjY3NzU0NzQ1LCJqdGkiOiJUUXpiYWZxRWlJT0xIYjBwIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.aAcmSkHV6SvDAR5a7RvU8igv9LUpVPWLBqTDDKSLmpg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/Webservice/WebApi/public/api/Admin/User/show/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Webservice",
+										"WebApi",
+										"public",
+										"api",
+										"Admin",
+										"User",
+										"show",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc3NjU3NzQsImV4cCI6MTY2Nzc2OTM3NCwibmJmIjoxNjY3NzY1Nzc0LCJqdGkiOiJ6T3pDOU5RV0JQVk5nR2RLIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Nf-uYZ4-gRr4znaeW78_raZp0WwRh80PrNBxPhYW7aQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "benemkute",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "nem@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "is_admin",
+											"value": "0",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/Webservice/WebApi/public/api/Admin/User/update/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Webservice",
+										"WebApi",
+										"public",
+										"api",
+										"Admin",
+										"User",
+										"update",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc4MzA2NjksImV4cCI6MTY2NzgzNDI2OSwibmJmIjoxNjY3ODMwNjY5LCJqdGkiOiI0czRPaG9BdW1VZERsZzlFIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qUmbZRMfRK4mvIuZ16_ntl0USH3BnQetmyMQaRNsLAM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/Webservice/WebApi/public/api/Admin/User/destroy/14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Webservice",
+										"WebApi",
+										"public",
+										"api",
+										"Admin",
+										"User",
+										"destroy",
+										"14"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Phone",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc4MzA2NjksImV4cCI6MTY2NzgzNDI2OSwibmJmIjoxNjY3ODMwNjY5LCJqdGkiOiI0czRPaG9BdW1VZERsZzlFIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qUmbZRMfRK4mvIuZ16_ntl0USH3BnQetmyMQaRNsLAM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Phone/index",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Phone",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addPhone",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "samsung s10",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "6000000",
+											"type": "text"
+										},
+										{
+											"key": "img_tamp",
+											"type": "file",
+											"src": "/E:/dienthoai/dienthoai10.jfif"
+										},
+										{
+											"key": "imgs_tamp[]",
+											"type": "file",
+											"src": [
+												"/E:/dienthoai/dienthoai11.jfif",
+												"/E:/dienthoai/dienthoai12.jfif"
+											]
+										},
+										{
+											"key": "category_id",
+											"value": "9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Phone/store",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Phone",
+										"store"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "iphone16 pro",
+											"disabled": true
+										},
+										{
+											"key": "slug",
+											"value": "iphone16 pro",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show by slug",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Phone/show/iphone-14-pro-max",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Phone",
+										"show",
+										"iphone-14-pro-max"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "iphone 14 pro max",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "28000000",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "img_tamp",
+											"type": "file",
+											"src": "/E:/dienthoai/dienthoai05.jfif",
+											"disabled": true
+										},
+										{
+											"key": "imgs_tamp[]",
+											"type": "file",
+											"src": [
+												"/E:/dienthoai/dienthoai01.jfif",
+												"/E:/dienthoai/dienthoai02.jfif"
+											]
+										},
+										{
+											"key": "category_id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Phone/update/iphone-14-pro-max?_method=PUT",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Phone",
+										"update",
+										"iphone-14-pro-max"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PUT"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Phone/destroy/samsung-s10",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Phone",
+										"destroy",
+										"samsung-s10"
+									],
+									"query": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Category/index",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Category",
+										"index"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "aa bb cc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Category/store",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Category",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Category/show/sam-sung",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Category",
+										"show",
+										"sam-sung"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2Vic2VydmljZS9XZWJBcGkvcHVibGljL2FwaS9sb2dpbi9hdXRoTG9naW4iLCJpYXQiOjE2Njc5MTcyODIsImV4cCI6MTY2Nzk0NjA4MiwibmJmIjoxNjY3OTE3MjgyLCJqdGkiOiJXQjZsY2NLNE9rTTBYOVlqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Myvx5L46a8fKYjEGE0pkOvNl5l7A-ICuGP-HOgJ-Lg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "i phone",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/api/Admin/Category/update/sam-sung",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"Admin",
+										"Category",
+										"update",
+										"sam-sung"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "http://localhost:8080/Webservice/WebApi/public"
+		}
+	]
+}
