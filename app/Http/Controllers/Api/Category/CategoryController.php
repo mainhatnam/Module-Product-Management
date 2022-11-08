@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api\Category;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\category;
+use App\Http\Requests\CategoryRequest;
+use App\Http\Resources\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -14,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categoryResource = category::all();
+        return $this->sentResponse(CategoryResource::collection($categoryResource));
         
     }
 
@@ -24,9 +28,10 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $CategoryRequest)
     {
-        //
+        $CategoryResource = category::create($CategoryRequest->all());
+        return $this->sentResponse(new CategoryResource($CategoryResource));
     }
 
     /**
@@ -35,9 +40,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(category $category)
     {
-        //
+        return $this->sentResponse(new CategoryResource($category));
     }
 
     /**
@@ -47,9 +52,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $CategoryRequest, category $category)
     {
-        //
+        $category->update($CategoryRequest->all());
+        return $this->sentResponse(new CategoryResource($category));
     }
 
     /**
@@ -58,8 +64,18 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(category $category)
     {
-        //
+        try {
+            $category->delete();      
+           } catch (\Throwable $th) {
+              return response()->json([
+               'message'=>'please check data again'
+              ],400);
+           }
+           return response()->json([
+               'massage'=>'successful delete',
+               'categoryDeleted'=>$category
+           ],200);
     }
 }

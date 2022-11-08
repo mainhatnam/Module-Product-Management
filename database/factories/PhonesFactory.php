@@ -22,7 +22,7 @@ class PhonesFactory extends Factory
         return [
             'name' => $name,
             'slug' => $slug,
-            'price' => fake()->randomFloat(null,100,1000),
+            'price' => fake()->numberBetween(10000000,50000000),
             'img' => fake()->text(20),
             'imgs' => fake()->text(20),
             'category_id' => category::factory()

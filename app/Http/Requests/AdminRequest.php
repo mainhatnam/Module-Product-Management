@@ -5,7 +5,9 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
-class UserRequset extends FormRequest
+use Illuminate\Support\Facades\Auth;
+
+class AdminRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +16,7 @@ class UserRequset extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Auth::user()->is_admin;
     }
 
     /**
@@ -25,15 +27,14 @@ class UserRequset extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email',
             'password' => 'required',
+            'is_admin'=>'required|numeric|min:0|max:1'
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => 'khong bo trong ten tai khoan',
             'email.required'=>'khong bo trong email',
             'password.required'=>'khong bo trong password',
             'email.email'=>'khong dung dinh dang email',
@@ -46,7 +47,4 @@ class UserRequset extends FormRequest
           'error' => $validator->errors()
         ],400));
     }
- 
-  
-    
 }

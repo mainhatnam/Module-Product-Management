@@ -19,15 +19,4 @@ class LoginController extends Controller
         }
         return $this->createNewToken($token);
     }
-    protected function createNewToken($token)
-    {
-        return response()->json([
-            'data' => [
-                'access_token' => $token,
-                'token_type' => 'bearer',
-                'expires_in' => JWTAuth::factory()->getTTL() * 60,
-                'user' => JWTAuth::user()
-            ]
-        ]);
-    }
 }

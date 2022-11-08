@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\UserResource;
+use App\Http\Requests\AdminRequest;
+use App\Http\Requests\UpdateUser;
 use JWTAuth;
 class UserController extends Controller
 {
@@ -16,8 +19,8 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        return $token = JWTAuth::user();
-
+        $user = User::where('id','!=',JWTAuth::user()->id)->get();
+        return $this->sentResponse(UserResource::collection($user));
     }
 
     /**
@@ -26,9 +29,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminRequest $UserRequset)
     {
-        //
+        $UserRequset['password']=bcrypt($UserRequset['password']);
+        $userResource =User::create($UserRequset->all());
+        return $this->sentResponse(new UserResource($userResource));
     }
 
     /**
@@ -37,9 +42,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $User)
     {
-        //
+        return $this->sentResponse(new UserResource($User));
     }
 
     /**
@@ -49,9 +54,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(UpdateUser $UpdateUser,User $User)
+    {      
+        $User->update($UpdateUser->all());
+        return $this->sentResponse(new UserResource($User));
     }
 
     /**
@@ -60,8 +66,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if ($user->id == Auth::user()->id) {
+          return response()->json([
+            'Massage'=>'Bad Request'
+           ],400);
+        }
+        $user->delete();
+        return response()->json([
+            'Massage'=>'successful delete',
+            'userDeleted'=>$user
+        ],200);
     }
 }
