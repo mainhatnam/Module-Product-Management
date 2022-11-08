@@ -1,2 +1,2 @@
 # Module-Product-Management
-Api laravel.Display products, add products, update products, delete products,...
+RESTful API Laravel and JWT
