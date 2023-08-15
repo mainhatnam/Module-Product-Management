@@ -10,6 +10,11 @@ use App\Http\Controllers\Api\Client\AuthController;
 use App\Http\Controllers\Api\Client\RegisterController;
 use App\Http\Controllers\Api\Phone\PhoneController as ServerPhone;
 use App\Http\Controllers\Api\Category\CategoryController as ServerCategory;
+use App\Jobs\HandleAPI;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -74,5 +79,33 @@ Route::prefix('Admin')->name('Admin.')->middleware(['auth:api','checkadmin'])->g
         Route::delete('destroy/{category:slug}',[ServerCategory::class,'destroy'])->name('destroy');
     });
 
+});
+
+Route::get('test', function () {
+    // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+    // HandleAPI::dispatch()->onConnection('database');
+    // for ($i=0; $i < 20; $i++) { 
+    //     sleep(1);
+    //     $output->writeln('hello lần thứ ' . $i);
+    // }
+
+    // $redis = Redis::connection();
+    // $redis->set('foo', 'bar');
+    // $name = $redis->get('foo');
+    // Cache::store('redis')->add('bar', 'baz', 600); // 10 Minutes
+    // Redis::set('abc', 'Taylor');
+    // $allKeys = Redis::keys('*');
+    // $value = Cache::get('nem');
+    $a = Cache::put('domain', 'toidicode.com', 600);
+    //$value = Cache::store('redis')->get('domain');
+    $redis = Redis::connection('cache'); // Lấy kết nối Redis
+    // Lưu trữ dữ liệu vào cache vĩnh viễn
+    $redis->set('key', 'value');
+    $allKeys = $redis->keys('*');
+    dump($allKeys,$a);
+    return response()->json([
+        'massage'=>'thanh cong'
+    ],200);
+    
 });
 
