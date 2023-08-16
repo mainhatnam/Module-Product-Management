@@ -70,6 +70,14 @@ return [
             'block_for' => null,
             'after_commit' => false,
         ],
+        'database2' => [ // Thêm cấu hình cho queue connection mới
+            'driver' => 'redis',
+            'connection' => 'database2', // Sử dụng kết nối Redis database2
+            'queue' => env('REDIS_QUEUE', 'default'),
+            'retry_after' => 90,
+            'block_for' => null,
+            'after_commit' => false,
+        ],
 
     ],
 

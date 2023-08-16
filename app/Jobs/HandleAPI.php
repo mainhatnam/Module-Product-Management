@@ -22,6 +22,7 @@ class HandleAPI implements ShouldQueue
      */
     public function __construct()
     {
+        $this->onConnection('database2');
     }
 
     /**
